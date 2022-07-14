@@ -16,7 +16,14 @@ void AShooterCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	// 隱藏預設槍
+	GetMesh()->HideBoneByName(TEXT("weapon_r"), EPhysBodyOp::PBO_None);
+	// 產生槍
 	Gun = GetWorld()->SpawnActor<AGun>(GunClass);
+	// 放到對應的位置
+	Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("WeaponSocket"));
+	// 設定Owner
+	Gun->SetOwner(this);
 }
 
 // Called every frame
