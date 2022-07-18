@@ -31,4 +31,8 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	USkeletalMeshComponent* Mesh;
+
+	// 開槍火花 EditAnywhere方便Runtime更改
+	UPROPERTY(EditAnywhere)
+	class UParticleSystem* MuzzleFlash;
 };
