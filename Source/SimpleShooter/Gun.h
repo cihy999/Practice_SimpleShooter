@@ -35,4 +35,7 @@ private:
 	// 開槍火花 EditAnywhere方便Runtime更改
 	UPROPERTY(EditAnywhere)
 	class UParticleSystem* MuzzleFlash;
+
+	UPROPERTY(EditAnywhere)
+	float MaxRange = 1000;
 };
